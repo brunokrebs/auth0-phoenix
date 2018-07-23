@@ -38,6 +38,26 @@ docker-compose run auth0.phoenix mix ecto.create
 docker-compose run auth0.phoenix mix ecto.migrate
 ```
 
+## Running the tests
+
+You can run all the specs using the following command:
+
+```
+docker exec -it auth0-phoenix_auth0.phoenix.web_1 mix test
+```
+
+If you need to create the test database, you can do so using the following command:
+
+```
+docker exec -it auth0-phoenix_auth0.phoenix.web_1 env MIX_ENV=test mix ecto.create
+```
+
+You can migrate your test database using the following command:
+
+```
+docker exec -it auth0-phoenix_auth0.phoenix.web_1 env MIX_ENV=test mix ecto.migrate
+```
+
 ## Built With
 
 - [Phoenix Framework](https://phoenixframework.org/) - The web framework used to build the app

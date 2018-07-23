@@ -14,6 +14,6 @@ config :app, App.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "",
-  database: "app_test",
-  hostname: "auth0.phoenix.postgres.db",
+  database: "travis_ci_test",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
