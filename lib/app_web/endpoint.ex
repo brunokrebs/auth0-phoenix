@@ -43,6 +43,8 @@ defmodule AppWeb.Endpoint do
     signing_salt: "2Ykv6WXm"
   )
 
+  plug(CORSPlug)
+
   plug(AppWeb.Router)
 
   @doc """
