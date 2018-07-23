@@ -1,0 +1,15 @@
+version: '3'
+services:
+  auth0.phoenix.postgres.db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  auth0.phoenix.web:
+    build: .
+    command: mix phx.server
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - auth0.phoenix.postgres.db
