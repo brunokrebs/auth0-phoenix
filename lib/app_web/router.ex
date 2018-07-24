@@ -9,7 +9,7 @@ defmodule AppWeb.Router do
     plug(
       Guardian.Plug.Pipeline,
       otp_app: :app,
-      module: App.Guardian,
+      module: App.Authentication.Guardian,
       error_handler: App.AuthErrorHandler
     )
 

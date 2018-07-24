@@ -26,6 +26,6 @@ config :logger, :console,
 import_config "#{Mix.env()}.exs"
 
 # Guardian config
-config :app, App.Guardian,
+config :app, App.Authentication.Guardian,
   issuer: "app",
   secret_key: "+T8mLrwmluUJvldUggEFk8xCMp9G3O/r1wRotc+fLS8GsIs6P4IfqffHoiWf3Y4G"

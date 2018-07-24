@@ -3,7 +3,7 @@ defmodule AppWeb.UserController do
 
   alias App.Accounts
   alias App.Accounts.User
-  alias App.Guardian
+  alias App.Authentication.Guardian
 
   action_fallback(AppWeb.FallbackController)
 

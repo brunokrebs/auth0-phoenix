@@ -1,4 +1,4 @@
-defmodule App.Guardian do
+defmodule App.Authentication.Guardian do
   use Guardian, otp_app: :app
 
   def subject_for_token(user, _claims) do

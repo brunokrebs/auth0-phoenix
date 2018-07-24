@@ -3,12 +3,13 @@ defmodule AppWeb.AuthenticationController do
 
   alias App.Accounts
   alias App.Accounts.User
-  alias App.Guardian
+  alias App.Authentication.Guardian
+  alias App.Authentication.AuthenticateExistingUser
 
   action_fallback(AppWeb.FallbackController)
 
   def sign_in(conn, %{"email" => email, "password" => password}) do
-    case Accounts.token_sign_in(email, password) do
+    case AuthenticateExistingUser.sign_in(email, password) do
       {:ok, token, _claims} ->
         conn |> render("token.json", token: token)
 
