@@ -1,0 +1,18 @@
+05:55:09.046 [info] GET /v1/users
+05:55:09.233 [info] Sent 401 in 187ms
+05:55:09.280 [info] POST /v1/users
+05:55:09.280 [info] Sent 401 in 122µs
+05:55:09.283 [info] POST /v1/users
+05:55:09.283 [info] Sent 401 in 228µs
+05:55:53.881 [info] GET /v1/users
+05:55:54.801 [info] Sent 401 in 920ms
+05:55:54.863 [info] POST /v1/users
+05:55:54.863 [info] Sent 401 in 103µs
+05:55:54.866 [info] POST /v1/users
+05:55:54.867 [info] Sent 401 in 115µs
+05:56:32.092 [info] GET /v1/users
+05:56:33.008 [info] Sent 401 in 915ms
+05:56:33.066 [info] POST /v1/users
+05:56:33.066 [info] Sent 401 in 103µs
+05:56:33.069 [info] POST /v1/users
+05:56:33.070 [info] Sent 401 in 161µs
