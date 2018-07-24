@@ -21,6 +21,6 @@ defmodule AppWeb.FallbackController do
   def call(conn, {:error, :unauthorized}) do
     conn
     |> put_status(:unauthorized)
-    |> json(%{error: "Login error"})
+    |> render(AppWeb.ErrorView, :"401")
   end
 end

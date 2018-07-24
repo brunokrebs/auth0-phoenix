@@ -12,25 +12,6 @@ defmodule AppWeb.UserController do
     render(conn, "index.json", users: users)
   end
 
-  def sign_up(conn, %{"user" => user_params}) do
-    with {:ok, %User{} = user} <- Accounts.create_user(user_params),
-         {:ok, token, _claims} <- Guardian.encode_and_sign(user) do
-      conn
-      |> put_status(:created)
-      |> render("token.json", token: token)
-    end
-  end
-
-  def sign_in(conn, %{"email" => email, "password" => password}) do
-    case Accounts.token_sign_in(email, password) do
-      {:ok, token, _claims} ->
-        conn |> render("token.json", token: token)
-
-      _ ->
-        {:error, :unauthorized}
-    end
-  end
-
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Accounts.create_user(user_params) do
       conn
