@@ -29,13 +29,13 @@ docker-compose build
 #### 3. Create the database
 
 ```
-docker-compose run auth0.phoenix mix ecto.create
+docker-compose run auth0.phoenix.web mix ecto.create
 ```
 
 #### 4. Run the migrations
 
 ```
-docker-compose run auth0.phoenix mix ecto.migrate
+docker-compose run auth0.phoenix.web mix ecto.migrate
 ```
 
 ## Running the tests
