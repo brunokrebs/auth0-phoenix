@@ -29,3 +29,8 @@ import_config "#{Mix.env()}.exs"
 config :app, App.Authentication.Guardian,
   issuer: "app",
   secret_key: "+T8mLrwmluUJvldUggEFk8xCMp9G3O/r1wRotc+fLS8GsIs6P4IfqffHoiWf3Y4G"
+
+# Ueberauth Auth0 config
+config :app, App.Authentication.Auth0,
+  domain: "https://ghoshnirmalya.auth0.com/userinfo",
+  content_type: "application/json"

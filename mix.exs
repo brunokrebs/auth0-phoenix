@@ -40,10 +40,9 @@ defmodule App.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:cors_plug, "~> 1.5"},
-      {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"},
       {:guardian, "~> 1.0"},
-      {:logger_file_backend, "0.0.10"}
+      {:logger_file_backend, "0.0.10"},
+      {:httpoison, "~> 1.0"}
     ]
   end
 

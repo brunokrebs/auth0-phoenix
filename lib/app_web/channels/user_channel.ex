@@ -1,8 +1,6 @@
 defmodule AppWeb.UserChannel do
   use AppWeb, :channel
 
-  alias App.Accounts
-
   def join("users", _params, socket) do
     {:ok, "channel: users::joined", socket}
   end

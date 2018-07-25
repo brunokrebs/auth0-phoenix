@@ -21,8 +21,7 @@ defmodule AppWeb.Router do
   scope "/v1", AppWeb do
     pipe_through(:api)
 
-    post("/auth/sign_in", AuthenticationController, :sign_in)
-    post("/auth/sign_up", AuthenticationController, :sign_up)
+    post("/auth", AuthenticationController, :authenticate)
   end
 
   scope "/v1", AppWeb do
