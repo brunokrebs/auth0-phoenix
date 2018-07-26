@@ -4,7 +4,7 @@ defmodule AppWeb.MemberController do
   alias App.Accounts
   alias App.Accounts.Member
 
-  action_fallback AppWeb.FallbackController
+  action_fallback(AppWeb.FallbackController)
 
   def index(conn, _params) do
     members = Accounts.list_members()
@@ -13,6 +13,8 @@ defmodule AppWeb.MemberController do
 
   def create(conn, %{"member" => member_params}) do
     with {:ok, %Member{} = member} <- Accounts.create_member(member_params) do
+      AppWeb.MemberChannel.broadcast_change(member)
+
       conn
       |> put_status(:created)
       |> put_resp_header("location", member_path(conn, :show, member))
@@ -35,6 +37,7 @@ defmodule AppWeb.MemberController do
 
   def delete(conn, %{"id" => id}) do
     member = Accounts.get_member!(id)
+
     with {:ok, %Member{}} <- Accounts.delete_member(member) do
       send_resp(conn, :no_content, "")
     end
