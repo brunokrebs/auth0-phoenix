@@ -28,5 +28,6 @@ defmodule AppWeb.Router do
     pipe_through([:api, :protected])
 
     resources("/users", UserController)
+    resources("/members", MemberController)
   end
 end
