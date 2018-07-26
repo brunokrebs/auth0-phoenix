@@ -14,8 +14,6 @@ defmodule AppWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Accounts.create_user(user_params) do
-      AppWeb.UserChannel.broadcast_change(user)
-
       conn
       |> put_status(:created)
       |> put_resp_header("location", user_path(conn, :show, user))
