@@ -13,7 +13,7 @@ defmodule AppWeb.MemberController do
 
   def create(conn, %{"member" => member_params}) do
     with {:ok, %Member{} = member} <- Accounts.create_member(member_params) do
-      AppWeb.MemberChannel.broadcast_change(member)
+      AppWeb.MemberChannel.broadcast_new_user(member)
 
       conn
       |> put_status(:created)
@@ -31,6 +31,8 @@ defmodule AppWeb.MemberController do
     member = Accounts.get_member!(id)
 
     with {:ok, %Member{} = member} <- Accounts.update_member(member, member_params) do
+      AppWeb.MemberChannel.broadcast_updated_user(member)
+
       render(conn, "show.json", member: member)
     end
   end
